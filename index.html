@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивые города мира</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="top">
+            <h1>Самые красивые города мира</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="row"></div>
+        </div>
+    </main>
+
+    <script>
+        let row = document.querySelector(".row");
+
+        for (let city of obj) {
+            let col = document.createElement("div");
+            col.className = "col";
+
+            let img = document.createElement("img");
+            img.src = city.img;
+            img.alt = city.name;
+
+            let name = document.createElement("p");
+            name.textContent = city.name;
+
+            let text = document.createElement("p");
+            text.textContent = city.text;
+
+            col.append(img);
+            col.append(name);
+            col.append(text);
+
+            row.append(col);
+        }
+    </script>
+
+</body>
+
+</html>
